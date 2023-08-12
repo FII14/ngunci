@@ -4,6 +4,6 @@ if [ ! -f "$file" ]; then
     exit 1
 fi
 file_dekripsi="${file%.b64}"
-file_dekripsi=$(echo -n "$file" | base64 -d)
+file_dekripsi=$(echo -n "$file_dekripsi" | base64 -d)
 base64 -d < "$file" > "$file_dekripsi"
 echo "File '$file' telah didekripsi."
